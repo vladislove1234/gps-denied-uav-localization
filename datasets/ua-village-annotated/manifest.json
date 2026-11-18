@@ -1,0 +1,46 @@
+{
+  "name": "ua-village-annotated",
+  "version": "1",
+  "description": "Hand-corrected 6-class segmentation labels over ua-village-multidate: reference sources seeded per class, fixed in tools/annotator.",
+  "source": "datasets/ua-village-multidate + tools/annotator (refs: osm, ms-footprints, landcoverai, flair, worldcover)",
+  "created": "2026-09-27T13:04:34+00:00",
+  "root": "data/derived/ua-village-annotated",
+  "n_files": 11,
+  "samples": 10,
+  "bytes": 2095186,
+  "hash": "119127a775a0c1712b3ae4274f34fc0a36f808e4040d961891ddfd445bca6e8c",
+  "quick_hash": "0e13f5553f50c224dd17b45a669fea490c0b7f1fa4fdec0987661cfe107b1f5d",
+  "config": {
+    "classes": {
+      "background": 0,
+      "building": 1,
+      "track": 2,
+      "woody": 3,
+      "field": 4,
+      "water": 5
+    },
+    "priority": [
+      "building",
+      "track",
+      "water",
+      "woody",
+      "field"
+    ],
+    "classes_version": 1,
+    "images_from": "ua-village-multidate"
+  },
+  "checks": {
+    "locations": 3,
+    "samples": 10,
+    "class_share_of_labelled_px": {
+      "building": 0.1785,
+      "track": 0.1774,
+      "water": 0.0075,
+      "woody": 0.6366
+    }
+  },
+  "git": {
+    "commit": "19bc1f084bc19024bc3295b6a96a87dd9585d3f2",
+    "dirty": true
+  }
+}

@@ -1,0 +1,20 @@
+# Linux + NVIDIA training server (RTX 3090 Ti, driver CUDA 13.0), used from 021 on.
+# environment.yml is the Intel-Mac env (torch 2.2.2) and does not install here.
+#   conda create -n uavloc python=3.11 -y && conda activate uavloc
+#   pip install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytorch.org/whl/cu128
+#   pip install -r requirements-server.txt && pip install -e .
+#   python -m ipykernel install --user --name uavloc
+numpy<2
+segmentation-models-pytorch==0.3.4
+scikit-image==0.24.0
+scipy
+pandas
+matplotlib
+tqdm
+tensorboard
+papermill
+ipykernel
+shapely
+pillow
+pyyaml
+opencv-python-headless

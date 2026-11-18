@@ -1,0 +1,32 @@
+{
+  "name": "drone-2025-easy",
+  "version": "1",
+  "description": "44 hand-picked 2025 drone frames with roads (the 'easy' validation frames), one folder per frame with pixel-only metadata, as annotator input.",
+  "source": "../archive/uav_localization_2025/data/drone/{images_2_v3_renamed,images_v6_renamed} selected by ['images_2_v3_renamed_small_easy', 'images_v6_renamed_easy']",
+  "created": "2026-09-27T00:47:09+00:00",
+  "root": "data/derived/drone-2025-easy",
+  "n_files": 88,
+  "samples": 44,
+  "bytes": 27662972,
+  "hash": "bd6ad37599b522f76bbb56f9570c9c00cdafe23e0a9a2298dacc03206f5728b9",
+  "quick_hash": "d1424cc39d1437cfd38085f9a77b507454044e4d5d69caf0bbc3e4e51ac45b3f",
+  "config": {
+    "picks": [
+      "images_2_v3_renamed_small_easy",
+      "images_v6_renamed_easy"
+    ],
+    "parents": [
+      "images_2_v3_renamed",
+      "images_v6_renamed"
+    ],
+    "fov_w_deg": 63.0
+  },
+  "checks": {
+    "frames": 44,
+    "zero_byte_in_picks_replaced_from_parent": 11
+  },
+  "git": {
+    "commit": "3e12dd0cdb6d240702c87515b7f8d28430d9beab",
+    "dirty": true
+  }
+}

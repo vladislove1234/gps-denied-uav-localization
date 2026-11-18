@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Map page harness</title>
+  <link rel="stylesheet" href="/tools/route_planner/web/vendor/leaflet.css">
+  <link rel="stylesheet" href="/tools/route_planner/web/style.css">
+</head>
+<body>
+  <div id="map"></div>
+  <script src="/tools/route_planner/web/vendor/leaflet.js"></script>
+  <script>
+    // Stands in for QtWebChannel: the same `bridge` surface, recording what the page sends to Python.
+    window.sent = [];
+    const listeners = [];
+    window.qt = { webChannelTransport: {} };
+    window.QWebChannel = function (_transport, ready) {
+      const record = (name) => (...args) => window.sent.push([name, ...args]);
+      const bridge = { command: { connect: (fn) => listeners.push(fn) }, mapReady: record("mapReady"),
+                       mapClicked: record("mapClicked"), markerMoved: record("markerMoved"),
+                       routeSelected: record("routeSelected"), tilesSettled: record("tilesSettled") };
+      ready({ objects: { bridge } });
+    };
+    window.sendCommand = (name, payload) => listeners.forEach((fn) => fn(name, JSON.stringify(payload)));
+  </script>
+  <script src="/tools/route_planner/web/app.js"></script>
+  <script src="drive.js"></script>
+</body>
+</html>

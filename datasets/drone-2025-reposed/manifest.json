@@ -1,0 +1,38 @@
+{
+  "name": "drone-2025-reposed",
+  "version": "1",
+  "description": "The 44 drone-2025-easy frames with heading and footprint scale corrected per frame by pocs/pose-reregistration; logged position kept. Orthophoto and label crops at that pose.",
+  "source": "drone-2025-easy + pocs/pose-reregistration/results.csv",
+  "created": "2026-09-27T16:24:55+00:00",
+  "root": "data/derived/drone-2025-reposed",
+  "n_files": 176,
+  "samples": 44,
+  "bytes": 34768983,
+  "hash": "1a0cfb8cb9c80a4e8e4d2c2de943d4fc640a4d8bfaae32d1f1e0ce45b8365cb9",
+  "quick_hash": "2377a6fcd70d67aea21dcdecb4503bb77ae1c7152047cd3f92ee03ca36c46c2b",
+  "config": {
+    "source_frames": "drone-2025-easy",
+    "corrections": "pocs/pose-reregistration/results.csv",
+    "fov_w_deg": 60.0,
+    "sat_image": "../archive/uav_localization_2025/data/satelites/satellite_gonchary.jpg",
+    "labels": [
+      "gonchary-2025",
+      "ortho",
+      "ua-ortho-annotated"
+    ]
+  },
+  "checks": {
+    "frames": 44,
+    "position_changed_deg": 0.0,
+    "sat_label_shapes_match": true,
+    "median_abs_yaw_offset_deg": 10.0,
+    "median_footprint_scale": 0.6,
+    "median_ambiguity_m": 36.33557115701103,
+    "frames_with_no_label_px": 0,
+    "median_labelled_frac": 0.09077100754285583
+  },
+  "git": {
+    "commit": "4888a36587a8a9c1f1bdf3bf01211ed3c8041ed2",
+    "dirty": true
+  }
+}

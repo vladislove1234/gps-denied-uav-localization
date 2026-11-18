@@ -1,0 +1,44 @@
+{
+  "name": "ua-drone-annotated",
+  "version": "1",
+  "description": "Hand-drawn 6-class segmentation labels over drone frames, in frame pixels (no georeference), drawn in tools/annotator with no reference seeding.",
+  "source": "datasets/drone-2025-easy + tools/annotator",
+  "created": "2026-09-27T01:27:24+00:00",
+  "root": "data/derived/ua-drone-annotated",
+  "n_files": 45,
+  "samples": 44,
+  "bytes": 301230,
+  "hash": "7fee85bf1d3d30956bcd5b1f61b93242267217efe2d1cd31a9e3fae16138bc67",
+  "quick_hash": "b925f2314703b4e52670b1d0eb83249ac7f0cdaa9e51ec977a28686887a71542",
+  "config": {
+    "classes": {
+      "background": 0,
+      "building": 1,
+      "track": 2,
+      "woody": 3,
+      "field": 4,
+      "water": 5
+    },
+    "priority": [
+      "building",
+      "track",
+      "water",
+      "woody",
+      "field"
+    ],
+    "classes_version": 1,
+    "images_from": "drone-2025-easy"
+  },
+  "checks": {
+    "locations": 44,
+    "samples": 44,
+    "class_share_of_labelled_px": {
+      "track": 0.8525,
+      "woody": 0.1475
+    }
+  },
+  "git": {
+    "commit": "db7d1a53e7f85f9034ac8a548e9b42a943b63cdf",
+    "dirty": true
+  }
+}

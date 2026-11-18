@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Segmentation Annotator</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <aside id="left">
+    <header><h1>Annotator</h1><small id="loc-progress"></small></header>
+    <div class="filters">
+      <input id="loc-filter" placeholder="filter locations…">
+      <select id="loc-coll" title="collection">
+        <option value="all">all</option><option value="sat">satellite</option><option value="drone">drone</option><option value="ortho">ortho</option>
+      </select>
+      <select id="loc-status">
+        <option value="all">all</option><option value="todo">todo</option><option value="in_progress">in progress</option>
+        <option value="done">done</option><option value="rejected">rejected</option>
+      </select>
+    </div>
+    <ul id="loc-list"></ul>
+    <section class="panel" id="export"><h3>Export</h3><div class="body"></div></section>
+  </aside>
+
+  <main>
+    <div id="toolbar">
+      <div id="tools"></div>
+      <span class="sep"></span>
+      <button data-act="undo" title="Undo [⌘Z]">↶</button>
+      <button data-act="redo" title="Redo [⇧⌘Z]">↷</button>
+      <button data-act="fit" title="Fit [F]">⤢</button>
+      <button data-act="save" title="Save now [⌘S]">💾</button>
+      <span id="save" class="saved">saved</span>
+      <span class="grow"></span>
+      <button data-act="help" title="Shortcuts [?]">?</button>
+    </div>
+    <div id="datebar"></div>
+    <div id="stage">
+      <canvas id="canvas"></canvas>
+      <div id="banner" hidden></div>
+      <div id="busy" hidden></div>
+    </div>
+    <footer><span id="cursor"></span><span class="grow"></span><span id="sel-info"></span></footer>
+  </main>
+
+  <aside id="right">
+    <section class="panel" id="dates"><h3>Dates &amp; compare</h3><div class="body"></div></section>
+    <section class="panel" id="target"><h3>Edit target</h3><div class="body"></div></section>
+    <section class="panel" id="toolopts"><h3>Tool</h3><div class="body"></div></section>
+    <section class="panel" id="layers"><h3>Layers</h3><div class="body"></div></section>
+    <section class="panel" id="refs"><h3>Reference overlays</h3><div class="body"></div></section>
+  </aside>
+
+  <div id="menu" hidden></div>
+  <div id="toast" hidden></div>
+  <div id="help" hidden>
+    <h2>Shortcuts</h2>
+    <table>
+      <tr><td><kbd>V</kbd> <kbd>R</kbd> <kbd>P</kbd> <kbd>L</kbd></td><td>select · rectangle · polygon · polyline</td></tr>
+      <tr><td><kbd>B</kbd> <kbd>E</kbd> <kbd>W</kbd></td><td>brush · eraser · magic wand</td></tr>
+      <tr><td><kbd>A</kbd> <kbd>T</kbd> <kbd>H</kbd></td><td>adopt from reference · move whole layer · pan</td></tr>
+      <tr><td><kbd>Space</kbd>-drag, right-drag</td><td>pan (wheel zooms)</td></tr>
+      <tr><td><kbd>1</kbd>…<kbd>5</kbd>, <kbd>Tab</kbd></td><td>active class, next sublayer</td></tr>
+      <tr><td><kbd>G</kbd></td><td>toggle edit target: BASE ↔ this date only</td></tr>
+      <tr><td><kbd>,</kbd> <kbd>.</kbd></td><td>previous / next date</td></tr>
+      <tr><td>hold <kbd>X</kbd></td><td>blink to compare date B</td></tr>
+      <tr><td><kbd>[</kbd> <kbd>]</kbd></td><td>brush size</td></tr>
+      <tr><td><kbd>Enter</kbd> <kbd>Esc</kbd> <kbd>Backspace</kbd></td><td>finish · cancel · remove last point</td></tr>
+      <tr><td><kbd>Del</kbd>, <kbd>⌘D</kbd>, <kbd>⌘A</kbd></td><td>delete · duplicate · select sublayer</td></tr>
+      <tr><td><kbd>⌘Z</kbd> <kbd>⇧⌘Z</kbd> <kbd>⌘S</kbd></td><td>undo · redo · save</td></tr>
+      <tr><td><kbd>⌘Enter</kbd></td><td>mark viewed date done</td></tr>
+      <tr><td><kbd>F</kbd></td><td>fit to window</td></tr>
+    </table>
+    <p>Autosaves 1.5 s after the last edit. Editing a <b>done</b> date sets it back to <i>in_progress</i>.</p>
+  </div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "name": "ua-ortho-annotated",
+  "version": "1",
+  "description": "Hand-drawn 6-class segmentation labels over test-area satellite images that have no exact georeference (Google Earth frames), in image pixels, no reference seeding.",
+  "source": "datasets/gonchary-2025-ortho + tools/annotator",
+  "created": "2026-09-27T15:19:36+00:00",
+  "root": "data/derived/ua-ortho-annotated",
+  "n_files": 2,
+  "samples": 1,
+  "bytes": 18736,
+  "hash": "2bc2e6fc4e2489c9d0989d5fd6d0e3115a8aaf5eee705f427da031a3c1c34f46",
+  "quick_hash": "9b8391d0e7ab0ef6466b23f6898ecdd3650e804f16897affefbc13f434a65af7",
+  "config": {
+    "classes": {
+      "background": 0,
+      "building": 1,
+      "track": 2,
+      "woody": 3,
+      "field": 4,
+      "water": 5
+    },
+    "priority": [
+      "building",
+      "track",
+      "water",
+      "woody",
+      "field"
+    ],
+    "classes_version": 1,
+    "images_from": "gonchary-2025-ortho"
+  },
+  "checks": {
+    "locations": 1,
+    "samples": 1,
+    "class_share_of_labelled_px": {
+      "track": 0.1477,
+      "woody": 0.8523
+    }
+  },
+  "git": {
+    "commit": "1591e559ba6dc1f11177b895bced99f16bbc9264",
+    "dirty": true
+  }
+}

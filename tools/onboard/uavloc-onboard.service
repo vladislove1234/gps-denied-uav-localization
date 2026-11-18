@@ -1,0 +1,23 @@
+[Unit]
+Description=UAV localization onboard runner
+After=local-fs.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=@USER@
+SupplementaryGroups=dialout
+EnvironmentFile=@DEFAULTS@
+# Wait for a mission package (zip or folder) instead of failing: the pilot copies it over by hand.
+ExecStartPre=/bin/sh -c 'until ls @MISSIONS@/mission-* >/dev/null 2>&1; do sleep 5; done'
+ExecStart=@VENV@/bin/python -m uavloc.onboard --packages @MISSIONS@ --connection ${UAVLOC_CONNECTION} --log-dir @LOGS@ $UAVLOC_ARGS
+TimeoutStartSec=infinity
+Restart=on-failure
+RestartSec=5
+# Exit 4 = no real localizer configured: restarting cannot fix that
+RestartPreventExitStatus=4
+KillSignal=SIGTERM
+TimeoutStopSec=15
+
+[Install]
+WantedBy=multi-user.target

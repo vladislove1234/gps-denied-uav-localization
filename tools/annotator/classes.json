@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "priority_note": "lower number wins at export; overlaps are kept while editing",
+  "classes": [
+    {"id": 0, "name": "background", "color": "#000000", "geometry": "none",
+     "priority": 99, "tools": [], "seed": []},
+    {"id": 1, "name": "building", "color": "#ff3b5c", "geometry": "vector",
+     "priority": 1, "tools": ["rect", "polygon", "brush", "wand"],
+     "seed": ["osm", "ms-footprints"]},
+    {"id": 2, "name": "track", "color": "#ffb020", "geometry": "raster",
+     "priority": 2, "tools": ["brush", "polyline", "wand"],
+     "seed": ["landcoverai", "osm"]},
+    {"id": 3, "name": "woody", "color": "#2ecc40", "geometry": "raster",
+     "priority": 4, "tools": ["brush", "wand"],
+     "seed": ["osm", "landcoverai", "worldcover", "flair"]},
+    {"id": 4, "name": "field", "color": "#d4e157", "geometry": "vector",
+     "priority": 5, "tools": ["polygon", "rect", "wand"],
+     "seed": []},
+    {"id": 5, "name": "water", "color": "#1e90ff", "geometry": "raster",
+     "priority": 3, "tools": ["brush", "wand"],
+     "seed": ["osm"]}
+  ]
+}

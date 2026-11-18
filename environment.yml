@@ -1,0 +1,64 @@
+# Pinned environment for this project.
+#
+# Machine since 2026-10-19: Apple M1 Pro (osx-arm64, 16 GB unified memory),
+# native Miniforge installed at ~/miniconda3 (same path as before, so the git
+# nbstripout filter and notebook paths keep working).
+#
+# torch stays at 2.2.2 although arm64 could take newer releases: every run up
+# to 021 was made with it on the old Intel Mac (osx-64, where 2.2.2 is the last
+# build), and ultralytics/smp were verified against this pairing. Upgrading is
+# a deliberate decision, not a cleanup.
+#
+# GPU: no CUDA; MPS works. Set PYTORCH_ENABLE_MPS_FALLBACK=1 so unsupported
+# ops fall back to CPU instead of raising. Results are NOT comparable across
+# devices (different RNG streams, and M1 MPS != Radeon MPS) — device is
+# recorded per run and a switch is flagged in the report.
+#
+# PoC-only extras, deliberately not pinned here, installed on top with
+#   pip install -c <(printf 'torch==2.2.2\ntorchvision==0.17.2\nnumpy==1.26.4\ntimm==0.9.7\n') \
+#       ultralytics==8.4.150 shapely==2.1.2 onnxruntime rasterio thop fastapi uvicorn ipykernel pytest
+# Route planner (docs/route-planner.md) adds: pymavlink, and for building ArduPilot SITL empy==3.3.4 pexpect future;
+#   the planner app's own pinned list is requirements-planner.txt
+# Annotator e2e check runs from conda base: pip install playwright numpy pillow
+#   && python -m playwright install chromium
+#
+# Deliberately NOT frozen from miniconda base: base carries torch 2.2.2 with
+# torchvision 0.15.2a0, which are incompatible (torch 2.2 pairs with
+# torchvision 0.17). The pairing below is the one verified working in the
+# existing cv_pukach env.
+#
+#   conda env create -f environment.yml
+#   conda activate uavloc
+#   pip install -e .
+
+name: uavloc
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pytorch=2.2.2
+  - torchvision=0.17.2
+  - numpy=1.26.4
+  - scipy=1.13
+  - pandas=2.3
+  - scikit-learn=1.7
+  - matplotlib=3.10
+  - pillow=11
+  - tqdm=4.67
+  - tensorboard=2.16
+  - setuptools<81      # tensorboard 2.16 imports pkg_resources, removed in setuptools 81
+  - jupyterlab=4.4
+  - pyyaml
+  - pandoc=3.9       # manuscript/mkr: Markdown -> Word build
+  - lxml            # manuscript/mkr: docx post-processing
+  - pip
+  - pip:
+      - opencv-python==4.11.0.86
+      - papermill==2.6.0      # parameterized headless notebook runs
+      - segmentation-models-pytorch==0.3.4  # uavloc.features.segmentation
+      - nbstripout==0.8.1     # keeps notebook diffs readable
+      - scikit-image==0.24.0  # superpixels (012)
+      # dense CRF (010). sdist only: build with Apple clang, not Homebrew llvm:
+      #   SDKROOT=$(xcrun --show-sdk-path) CC=/usr/bin/clang CXX=/usr/bin/clang++ pip install pydensecrf2==1.1
+      - pydensecrf2==1.1

@@ -1,0 +1,79 @@
+{
+  "name": "ua-village-multidate",
+  "version": "2",
+  "description": "Ukrainian village ground at 0.386 m/px, every distinct Esri World Imagery date plus a Google satellite look, co-registered to the newest Esri, with one OSM class mask per location.",
+  "source": "Esri World Imagery + Wayback (XYZ z18); Google Map Tiles API satellite (z18, no capture date); OpenStreetMap via Overpass",
+  "created": "2026-09-27T12:01:24+00:00",
+  "root": "data/derived/ua-village-multidate",
+  "n_files": 311,
+  "samples": 192,
+  "bytes": 365343349,
+  "hash": "91bbe65dd238fbaeb54d6e02a068b2bc0b41ae374f523bcfe09bd9134496040a",
+  "quick_hash": "17ed85994ba88a651b606d2700a37aafe0c2af4a398b4e8470ef7ac1368823b1",
+  "config": {
+    "zoom": 18,
+    "width_m": 1200.0,
+    "height_m": 900.0,
+    "classes": {
+      "background": 0,
+      "building": 1,
+      "road": 2,
+      "water": 3,
+      "wood": 4
+    },
+    "road_width_m": {
+      "primary": 8.0,
+      "secondary": 7.0,
+      "tertiary": 6.0,
+      "residential": 6.0,
+      "service": 4.0,
+      "unclassified": 5.0,
+      "track": 3.0,
+      "path": 1.5,
+      "footway": 1.5,
+      "bridleway": 1.5
+    },
+    "min_labelled": 0.025,
+    "min_building_px": 1500,
+    "max_dates": 8,
+    "region": [
+      48.3,
+      23.2,
+      50.8,
+      29.0
+    ],
+    "google": {
+      "date_name": "google",
+      "zoom": 18,
+      "min_coverage": 0.995,
+      "min_shift_peak": 15.0,
+      "max_shift_px": 30.0,
+      "appearance_max_corr": 0.97
+    }
+  },
+  "checks": {
+    "villages": 59,
+    "image_label_pairs": 192,
+    "dates_per_village_median": 3.0,
+    "dates_per_village_min": 2,
+    "labelled_frac_median": 0.06349381666917067,
+    "label_offset_m_median": 2.8387290719134857,
+    "label_offset_m_median_strong_peak": 2.4949324079519823,
+    "villages_with_strong_peak": 41,
+    "coregistration_shift_m_median": 0.015239746653652885,
+    "coregistration_shift_m_max": 4.158710273027648,
+    "appearance_corr_median": 0.5044143998737188,
+    "appearance_corr_min": 0.002105026153111403,
+    "google_villages": 56,
+    "google_skipped": {
+      "unreliable shift": 3
+    },
+    "google_shift_m_median": 2.2156732558537495,
+    "google_shift_m_max": 5.871098912488301,
+    "google_max_corr_vs_stored_max": 0.8908128482765973
+  },
+  "git": {
+    "commit": "19bc1f084bc19024bc3295b6a96a87dd9585d3f2",
+    "dirty": true
+  }
+}

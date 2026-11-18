@@ -1,0 +1,33 @@
+{
+  "name": "gonchary-2025-ortho",
+  "version": "1",
+  "description": "The 2025 Gonchary Google Earth frame (the harness satellite image), downsampled 3x to ~0.2 m/px, pixel-only, as annotator input.",
+  "source": "archive/uav_localization_2025/data/satelites/satellite_gonchary.jpg",
+  "created": "2026-09-27T15:06:16+00:00",
+  "root": "data/derived/gonchary-2025-ortho",
+  "n_files": 2,
+  "samples": 1,
+  "bytes": 1481053,
+  "hash": "6f3fe93a43ab1cee7fd5a262a429a0cce4b4dcf89a52c9cdf07526951cff685a",
+  "quick_hash": "695b81808709e547bb4176adf8f3bcf3bbef95e16869877b9325607f90ff469b",
+  "config": {
+    "factor": 3,
+    "bounds_approx": {
+      "top": 49.762965,
+      "left": 24.166472,
+      "bottom": 49.759291,
+      "right": 24.174046
+    }
+  },
+  "checks": {
+    "shape": [
+      2009,
+      2731
+    ],
+    "mpp": 0.1994
+  },
+  "git": {
+    "commit": "849d2e655a48b05d92d994e55cc646100232e055",
+    "dirty": true
+  }
+}

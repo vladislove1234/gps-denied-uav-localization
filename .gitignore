@@ -1,0 +1,73 @@
+# Ignore by PATH, never by extension where possible.
+# The repo holds code, notebooks (outputs stripped), dataset build scripts and
+# docs. Run results, data and model weights stay local.
+
+# Run results: run logs, metrics, figures, tensorboard, intermediate tensors
+experiments/*/artifacts/
+experiments/*/figures/
+experiments/*/runs.jsonl
+experiments/*/report.md
+pocs/*/figures/
+pocs/*/results*.json
+builds/*/figures/
+builds/*/results*.json
+builds/*/exports/
+pocs/*/models/
+pocs/*/case/
+pocs/**/*.csv
+**/checks/figures/
+/tensorboard/
+**/runs/
+**/runs2/
+**/outputs/
+**/checkpoints/
+metrics*.json
+
+# Data lives outside the repo; `data` is a symlink to ../data
+/data
+/notebooks
+datasets/**/*.png
+*.jpg
+*.jpeg
+*.npz
+*.npy
+pocs/*/satelites/
+
+# Model weights and exported encoders (ultralytics/YOLOE, MobileCLIP)
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.ts
+
+# Raw flight logs and media
+*.bin
+*.tlog
+*.rlog
+*.MOV
+*.mov
+*.mp4
+*.zip
+
+# Packaged app builds
+tools/route_planner/packaging/dist/
+
+# Notebook noise (nbstripout handles outputs; this catches the rest)
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+build/
+dist/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Secrets (API keys). Never commit.
+.env

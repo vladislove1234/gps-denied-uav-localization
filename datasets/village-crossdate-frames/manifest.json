@@ -1,0 +1,52 @@
+{
+  "name": "village-crossdate-frames",
+  "version": "1",
+  "description": "Simulated drone frames with exact truth: the newest Esri date cropped at random poses on the segmentation models' satellite val ground (bushcha, birky strip), paired with the oldest date of the same village as the map.",
+  "source": "ua-village-multidate",
+  "created": "2026-09-27T21:19:58+00:00",
+  "root": "data/derived/village-crossdate-frames",
+  "n_files": 80,
+  "samples": 40,
+  "bytes": 175257,
+  "hash": "83157b7c8259f62618b02b28ac05721fe2803042e4cc9ec4883ee9d163977ad3",
+  "quick_hash": "af1f0d9a2ab872c6c7208f16d017f8817f12ab3da34d4525f6cac8eaa31e9118",
+  "config": {
+    "places": {
+      "bushcha-50p2422-25p8305": null,
+      "birky-49p9105-23p9192": [
+        0,
+        704
+      ]
+    },
+    "drone_date": "current",
+    "frames_per_place": 20,
+    "altitude_m": 40.0,
+    "fov_w_deg": 60.0,
+    "margin_m": 80.0,
+    "seed": 42
+  },
+  "checks": {
+    "frames": 40,
+    "places": [
+      "bushcha-50p2422-25p8305",
+      "birky-49p9105-23p9192"
+    ],
+    "map_dates": {
+      "bushcha-50p2422-25p8305": "2024-06-06",
+      "birky-49p9105-23p9192": "2018-03-28"
+    },
+    "drone_date": "current",
+    "frame_px": [
+      68,
+      120
+    ],
+    "footprint_m": [
+      46.19,
+      25.98
+    ]
+  },
+  "git": {
+    "commit": "550a6a7c71660ea2e41acabdb5afec13bf478620",
+    "dirty": true
+  }
+}

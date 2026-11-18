@@ -1,0 +1,24 @@
+# Route planner desktop app (tools/route_planner), pinned to the versions of the uavloc conda env it was built in.
+#   conda activate uavloc && pip install -r requirements-planner.txt
+# torch is only the CPU build: the localizability map runs the matcher's FFT correlation on the laptop.
+PySide6==6.12.0
+numpy==1.26.4
+opencv-python-headless==4.11.0.86
+pillow==11.3.0
+scipy==1.13.1
+onnxruntime==1.31.0
+torch==2.2.2
+pymavlink==2.4.50
+rasterio==1.4.4
+tqdm==4.67.3
+matplotlib==3.10.9
+# Imported transitively through uavloc.features.segmentation / uavloc.matching (not used by the app itself).
+# Dropping them needs those imports made lazy in uavloc/, which this app does not own.
+pandas==2.3.3
+torchvision==0.17.2
+segmentation-models-pytorch==0.3.4
+timm==0.9.7
+pretrainedmodels==0.7.4
+huggingface_hub==2.2.0
+safetensors==0.8.0
+PyYAML==6.0.3

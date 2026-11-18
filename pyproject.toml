@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gps-denied-uav-localization"
+version = "0.1.0"
+description = "GPS-denied UAV localization via cross-view image matching"
+# Distribution name is hyphenated; the import name is `uavloc`
+# (same split as scikit-learn -> sklearn).
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+include = ["uavloc*"]
+
+[tool.setuptools.package-data]
+"uavloc.ardupilot" = ["lua/*.lua"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

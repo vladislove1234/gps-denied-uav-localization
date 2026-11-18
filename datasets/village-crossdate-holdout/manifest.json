@@ -1,0 +1,73 @@
+{
+  "name": "village-crossdate-holdout",
+  "version": "1",
+  "description": "Simulated drone frames with exact truth, as village-crossdate-frames: the newest Esri date cropped at random poses on the 10 val villages of 023's location split (seed 42), which no segmenter and no 023 head trained on; map = oldest date in meta, the bench uses the newest.",
+  "source": "ua-village-multidate",
+  "created": "2026-10-19T19:43:04+00:00",
+  "root": "data/derived/village-crossdate-holdout",
+  "n_files": 400,
+  "samples": 200,
+  "bytes": 714862,
+  "hash": "3c7d882fc0cc05c681b6121205701a4a19213ba4283653fdfa4e9bc2615f2940",
+  "quick_hash": "3b5b486a279416b861ef547c1d2c4800287a1e96333ed4503e6b0dd261259ca1",
+  "config": {
+    "places": {
+      "ivannie-50p4543-25p7398": null,
+      "maidan-50p2512-26p0155": null,
+      "maksymivka-48p8871-23p9317": null,
+      "oblaznytsia-49p2703-24p1288": null,
+      "pidhaichyky-48p5627-25p1788": null,
+      "pidhorodnie-49p5387-25p5199": null,
+      "sadzhavka-48p5678-24p7897": null,
+      "strilche-48p6821-25p5613": null,
+      "vesnianka-49p7175-27p3183": null,
+      "zlynets-50p3697-25p7999": null
+    },
+    "drone_date": "current",
+    "frames_per_place": 20,
+    "altitude_m": 40.0,
+    "fov_w_deg": 60.0,
+    "margin_m": 80.0,
+    "seed": 42
+  },
+  "checks": {
+    "frames": 200,
+    "places": [
+      "ivannie-50p4543-25p7398",
+      "maidan-50p2512-26p0155",
+      "maksymivka-48p8871-23p9317",
+      "oblaznytsia-49p2703-24p1288",
+      "pidhaichyky-48p5627-25p1788",
+      "pidhorodnie-49p5387-25p5199",
+      "sadzhavka-48p5678-24p7897",
+      "strilche-48p6821-25p5613",
+      "vesnianka-49p7175-27p3183",
+      "zlynets-50p3697-25p7999"
+    ],
+    "map_dates": {
+      "ivannie-50p4543-25p7398": "2024-06-06",
+      "maidan-50p2512-26p0155": "2024-06-06",
+      "maksymivka-48p8871-23p9317": "2025-04-24",
+      "oblaznytsia-49p2703-24p1288": "2025-04-24",
+      "pidhaichyky-48p5627-25p1788": "2025-04-24",
+      "pidhorodnie-49p5387-25p5199": "2023-03-15",
+      "sadzhavka-48p5678-24p7897": "2024-06-06",
+      "strilche-48p6821-25p5613": "2023-03-15",
+      "vesnianka-49p7175-27p3183": "2023-03-15",
+      "zlynets-50p3697-25p7999": "2024-06-06"
+    },
+    "drone_date": "current",
+    "frame_px": [
+      68,
+      121
+    ],
+    "footprint_m": [
+      46.19,
+      25.98
+    ]
+  },
+  "git": {
+    "commit": "d0d82d8f13fcd9794bf1f8d61e5780d707b24fef",
+    "dirty": null
+  }
+}
