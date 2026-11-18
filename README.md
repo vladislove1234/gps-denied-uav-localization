@@ -58,10 +58,6 @@ Frozen, read-only, for reference:
 - `../archive/uav_localization_2025` — the 2025 repo (18 notebooks)
 - `../archive/uav_geo_localisation_2024` — the original 2024 experiments
 
----
-
-**Repo name:** `gps-denied-uav-localization` (private). Not yet pushed — no
-remote is configured. To publish:
 
 ```bash
 gh repo create gps-denied-uav-localization --private --source=. --remote=origin
