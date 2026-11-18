@@ -6,7 +6,7 @@
 experiments/*/artifacts/
 experiments/*/figures/
 experiments/*/runs.jsonl
-experiments/*/report.md
+experiments/**/*.md
 pocs/*/figures/
 pocs/*/results*.json
 builds/*/figures/
